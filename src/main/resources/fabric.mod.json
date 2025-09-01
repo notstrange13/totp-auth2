@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "totp-auth2",
+  "version": "${version}",
+  "name": "totp-auth2",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "environment": "server",
+  "entrypoints": {
+    "fabric-datagen": [
+      "me.strange.totpAuth2.client.TotpAuth2DataGenerator"
+    ],
+    "main": [
+      "me.strange.totpAuth2.TotpAuth2"
+    ]
+  },
+  "mixins": [
+    "totp-auth2.mixins.json",
+    {
+      "config": "totp-auth2.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabric loader": ">=0.17.2",
+    "fabric": "*",
+    "minecraft": "1.21.7"
+  }
+}
