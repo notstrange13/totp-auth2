@@ -43,4 +43,32 @@ public class TotpAuth2 implements ModInitializer {
         unauthenticatedPlayers.remove(player.getUuid());
         System.out.println("Player authenticated: " + player.getName().getString());
     }
+    public boolean verifyCodeAndAuthenticate(ServerPlayerEntity player, String submittedCode) {
+        String secret = getPlayerSecret(player.getUuid());  // Retrieve secret from wherever you store it
+        if (secret == null) {
+            player.sendMessage(net.minecraft.text.Text.literal("You are not registered. Contact an admin."), false);
+            return false;
+        }
+
+        boolean valid = verifyTotpCode(secret, submittedCode);  // Verify TOTP code with library
+
+        if (valid) {
+            unauthenticatedPlayers.remove(player.getUuid());
+            System.out.println("Player authenticated: " + player.getName().getString());
+        }
+
+        return valid;
+    }
+
+    // Example stub to get player's secret - replace with real DB or file lookup
+    private String getPlayerSecret(UUID uuid) {
+        // TODO: Lookup secret for uuid here
+        return "JBSWY3DPEHPK3PXP";  // Example static secret for testing
+    }
+
+    // Example stub for TOTP verification using your TOTP library
+    private boolean verifyTotpCode(String secret, String code) {
+        // TODO: Use dev.samstevens.totp or similar library for actual verification
+        return false;  // Placeholder always false
+    }
 }
