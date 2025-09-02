@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "totpauth2",
+  "version": "1.0.0",
+  "name": "TotpAuth2",
+  "description": "Two-factor authentication for your server.",
+  "authors": ["Shibasis Panda"],
+  "contact": {
+    "sources": "https://github.com/notstrange13/totp-auth2"
+  },
+  "license": "MIT",
+  "icon": "assets/totpauth2/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": ["me.strange.totpAuth2.TotpAuth2"]
+  },
+  "depends": {
+    "fabricloader": ">=0.14.0",
+    "fabric-api": "*",
+    "minecraft": "1.21.7",
+    "java": ">=19"
+  }
+}

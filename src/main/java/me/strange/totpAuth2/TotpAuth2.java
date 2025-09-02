@@ -1,6 +1,6 @@
 package me.strange.totpAuth2;
 
-import net.fabricmc.api.ModInitializer;
+import net.fabricmc.api.ModInitializer;         //creating problems here
 import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.minecraft.server.MinecraftServer;
@@ -11,7 +11,7 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
 
-public class TotpAuth2 implements ModInitializer {
+public class TotpAuth2 implements ModInitializer {          //creating problems here
 
     private final Set<UUID> unauthenticatedPlayers = new HashSet<>();
 

@@ -1,5 +1,5 @@
 plugins {
-    id 'fabric-loom' version '1.11-SNAPSHOT'
+    id 'fabric-loom' version '1.7-SNAPSHOT'
     id 'maven-publish'
 }
 
@@ -21,11 +21,6 @@ loom {
     }
 }
 
-fabricApi {
-    configureDataGeneration {
-        client = true
-    }
-}
 
 repositories {
     maven {
@@ -47,7 +42,6 @@ dependencies {
     minecraft "com.mojang:minecraft:1.21.7"
     mappings "net.fabricmc:yarn:1.21.7+build.8:v2"
     modImplementation "net.fabricmc.fabric-api:fabric-api:0.129.0+1.21.7"
-    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
     implementation 'dev.samstevens.totp:totp:1.7.1'
     implementation 'com.google.zxing:javase:3.3.3'
 }
